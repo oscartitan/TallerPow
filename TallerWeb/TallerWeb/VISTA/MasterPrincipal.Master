@@ -18,7 +18,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Ionicons -->
     <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
     <!-- DataTables -->
-    <link rel="stylesheet" href="../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">          
+    <link rel="stylesheet" href="../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">    
+    <link href="../bower_components/datatables.net-bs/css/buttons.dataTables.min.css" rel="stylesheet" />          
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -427,7 +428,14 @@ desired effect
         <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- DataTables -->
         <script src="../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>       
+        <script src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>  
+        <script src="../bower_components/datatables.net-bs/js/buttons.html5.min.js"></script>
+        <script src="../bower_components/datatables.net-bs/js/buttons.print.min.js"></script>
+        <script src="../bower_components/datatables.net-bs/js/dataTables.buttons.flash.min.js"></script>
+        <script src="../bower_components/datatables.net-bs/js/dataTables.buttons.min.js"></script>
+        <script src="../bower_components/datatables.net-bs/js/jszip.min.js"></script>
+        <script src="../bower_components/datatables.net-bs/js/pdfmake.min.js"></script>
+        <script src="../bower_components/datatables.net-bs/js/vfs_fonts.js"></script>
         <!-- AdminLTE App -->
         <script src="../dist/js/adminlte.min.js"></script>
 
@@ -440,9 +448,6 @@ desired effect
 <script>
     $(document).ready(function () {
         GridGeneral();
-
-        $('.datemask').inputmask('mm/yyyy', { 'placeholder': 'mm/aaaa' })
-
     });
 
     var GridGeneral = function () {

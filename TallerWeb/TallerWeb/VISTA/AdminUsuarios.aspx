@@ -63,7 +63,16 @@
                 <div class="table-responsive">
                     <asp:GridView ID="GridViewUsuarios" runat="server" GridLines="None"
                         CssClass="gvuser table table-striped table-bordered text-sm"
+                        OnRowCommand="GridViewUsuarios_RowCommand" DataKeyNames="USUARIO_USUARIO" 
                         CellSpacing="0" EmptyDataText="No se encontraron Registros con los parametros indicados.">
+                        <Columns>
+                            <asp:ButtonField CommandName="EliminaU" ControlStyle-CssClass="btn btn-danger"
+                                ButtonType="Link" Text="<i aria-hidden='true' class='fa fa-trash-o'></i> 
+                                            Eliminar"
+                                HeaderText="">
+                                <ControlStyle CssClass="btn btn-danger btn-sm"></ControlStyle>
+                            </asp:ButtonField>
+                        </Columns>
                     </asp:GridView>
                 </div>
 

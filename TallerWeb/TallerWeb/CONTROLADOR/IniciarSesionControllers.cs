@@ -68,5 +68,20 @@ namespace TallerWeb.CONTROLADOR
             }
         }
 
+        //delete 
+        public static int eliminarUsuario(string usuario)
+        {
+            IniciarSesionModels usu = new IniciarSesionModels();
+
+            try
+            {
+                return usu.borrarUsuario(usuario);
+            }
+            catch (Exception ex)
+            {
+                throw; // para lanzar la exception o complementar la capturada
+            }
+        }
+
     }
 }

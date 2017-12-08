@@ -28,5 +28,11 @@ namespace TallerWeb.MODELO
             Sql = "select * from TALLER.TUSUARIOS";
             return dataload.OraConsulta(Sql);
         }
+
+        internal int borrarUsuario(string usuario)
+        {
+            Sql = "delete TALLER.TUSUARIOS where USUARIO_USUARIO = '"+ usuario.ToUpper().Trim() + "'";
+            return dataload.OraProcedimiento(Sql);
+        }
     }
 }
