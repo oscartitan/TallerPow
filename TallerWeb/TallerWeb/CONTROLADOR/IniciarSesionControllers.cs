@@ -53,5 +53,20 @@ namespace TallerWeb.CONTROLADOR
             return Convert.ToBase64String(hash);
         }
 
+        // metodo para validar el usuario y contraseña
+        public static DataSet mostrarUsuarios()
+        {
+            IniciarSesionModels usu = new IniciarSesionModels();
+
+            try
+            {
+                return usu.listadoUsuarios();
+            }
+            catch (Exception ex)
+            {
+                throw; // para lanzar la exception o complementar la capturada
+            }
+        }
+
     }
 }

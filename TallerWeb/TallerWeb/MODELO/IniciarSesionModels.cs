@@ -23,5 +23,10 @@ namespace TallerWeb.MODELO
                  " values('" + usuario.ToUpper().Trim() + "','" + contrasena.Trim() + "',INITCAP('" + nombre + "'))";
              return dataload.OraProcedimiento(Sql);
         }
+
+        internal DataSet listadoUsuarios() {
+            Sql = "select * from TALLER.TUSUARIOS";
+            return dataload.OraConsulta(Sql);
+        }
     }
 }

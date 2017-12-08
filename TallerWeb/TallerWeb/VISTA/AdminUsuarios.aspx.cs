@@ -26,9 +26,23 @@ namespace TallerWeb.VISTA
             }
             else
             {
-     
 
             }   
         }
+
+        protected void ListarUsuario_Click(object sender, EventArgs e)
+        {
+           var registros = IniciarSesionControllers.mostrarUsuarios();
+           if (registros.Tables[0].Rows.Count > 0)
+           {
+               GridViewUsuarios.DataSource = registros;
+               GridViewUsuarios.DataBind();
+           }
+           else {
+               GridViewUsuarios.DataSource = null;
+               GridViewUsuarios.DataBind();
+           }
+        }
+        
     }
 }

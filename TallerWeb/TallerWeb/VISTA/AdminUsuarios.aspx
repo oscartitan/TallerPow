@@ -32,11 +32,49 @@
            
         </div>
         <!-- /.box-body -->
-        <div class="box-footer">                   
-             <asp:LinkButton ID="Adicionar" runat="server" Text="Insertar" CssClass="btn btn-primary" 
-                 OnClick="AddUsuario_Click">
+        <div class="box-footer">
+            <div class="row">
+                <div class="col-xs-4">
+                    <asp:LinkButton ID="Adicionar" runat="server" Text="Insertar" CssClass="btn btn-primary"
+                        OnClick="AddUsuario_Click">
                 <span aria-hidden="true" class="fa fa-user-plus"> Insertar</span>
-             </asp:LinkButton>      
+                    </asp:LinkButton>
+                </div>
+
+                <div class="col-xs-4">
+                    <asp:LinkButton ID="Listar" runat="server" Text="Listar" CssClass="btn btn-default"
+                        OnClick="ListarUsuario_Click">
+                <span aria-hidden="true" class="fa fa-list"> Listar</span>
+                    </asp:LinkButton>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+
+
+         <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Listado de Usuarios</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+
+                <div class="table-responsive">
+                    <asp:GridView ID="GridViewUsuarios" runat="server" GridLines="None"
+                        CssClass="gvuser table table-striped table-bordered text-sm"
+                        CellSpacing="0" EmptyDataText="No se encontraron Registros con los parametros indicados.">
+                    </asp:GridView>
+                </div>
+
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        
+        </div>
+
+            </div>
         </div>
     </div>
 
