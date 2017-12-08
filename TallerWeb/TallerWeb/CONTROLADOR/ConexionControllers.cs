@@ -15,7 +15,7 @@ namespace TallerWeb.CONTROLADOR
             return ConfigurationManager.ConnectionStrings["conexion_oracle"].ConnectionString;
         }
 
-        public DataSet OraSqlQuery(String SQL)
+        public DataSet OraConsulta(String SQL)
         {
             OracleConnection conexion = new OracleConnection(this.cadenaConexionOra());
             //OracleConnection conexion = new OracleConnection("Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=10.1.1.2)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=XE)));User ID=TALLER;Password=admin; Unicode=true");
