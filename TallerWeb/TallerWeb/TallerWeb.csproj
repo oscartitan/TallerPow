@@ -6521,23 +6521,6 @@
     <Content Include="dist\js\demo.js" />
     <Content Include="dist\js\pages\dashboard.js" />
     <Content Include="dist\js\pages\dashboard2.js" />
-    <Content Include="documentation\build\include\adminlte-options.html" />
-    <Content Include="documentation\build\include\advice.html" />
-    <Content Include="documentation\build\include\browsers.html" />
-    <Content Include="documentation\build\include\components.html" />
-    <Content Include="documentation\build\include\dependencies.html" />
-    <Content Include="documentation\build\include\download.html" />
-    <Content Include="documentation\build\include\faq.html" />
-    <Content Include="documentation\build\include\implementations.html" />
-    <Content Include="documentation\build\include\introduction.html" />
-    <Content Include="documentation\build\include\layout.html" />
-    <Content Include="documentation\build\include\license.html" />
-    <Content Include="documentation\build\include\plugins.html" />
-    <Content Include="documentation\build\include\upgrade.html" />
-    <Content Include="documentation\build\index.html" />
-    <Content Include="documentation\docs.js" />
-    <Content Include="documentation\index.html" />
-    <Content Include="documentation\style.css" />
     <Content Include="Gruntfile.js" />
     <Content Include="index.html" />
     <Content Include="index2.html" />
@@ -6721,6 +6704,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CONTROLADOR\ConexionControllers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -7334,12 +7318,10 @@
     <Content Include="composer.json" />
     <Content Include="dist\css\adminlte.css.map" />
     <Content Include="dist\css\adminlte.min.css.map" />
-    <Content Include="LICENSE" />
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include="plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="plugins\input-mask\phone-codes\phone-codes.json" />
-    <Content Include="README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -7349,7 +7331,6 @@
     <Content Include="yarn.lock" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CONTROLADOR\" />
     <Folder Include="MODELO\" />
     <Folder Include="VISTA\" />
   </ItemGroup>
