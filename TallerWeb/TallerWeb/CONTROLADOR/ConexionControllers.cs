@@ -1,8 +1,9 @@
-﻿using Oracle.DataAccess.Client;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Data.OracleClient;
 using System.Linq;
 using System.Web;
 
@@ -41,31 +42,34 @@ namespace TallerWeb.CONTROLADOR
         }
 
         // Ejecutar metodos 
-        public DataTable ExecuteReader(string procedimiento)
+        public int OraProcedimiento(string SQL)
         {
-            OracleConnection conexion = new OracleConnection(this.cadenaConexionOra());
-            DataTable tabla = new DataTable();
+            int registros = 0;
+            OracleConnection conexion = new OracleConnection(this.cadenaConexionOra());                        
+            conexion.Open();
+            System.Data.OracleClient.OracleCommand comando = conexion.CreateCommand();
+            System.Data.OracleClient.OracleTransaction transaction = conexion.BeginTransaction();            
+
             try
             {
-                OracleDataReader cursor;
-                conexion.Open();
-                OracleCommand DbCommand = new OracleCommand(procedimiento, conexion);
-                DbCommand.CommandType = CommandType.StoredProcedure;
-                OracleDataReader lector = DbCommand.ExecuteReader();
-                cursor = DbCommand.ExecuteReader();
-                tabla.Load(cursor);
+                comando.Transaction = transaction;
+                comando.CommandText = SQL;
+                registros = comando.ExecuteNonQuery();
+                
+                transaction.Commit();                               
             }
-            catch (Exception ex)
+            catch (Exception) // atrapa la excepcion que hereden de System.Exception
             {
-                throw ex;
+                transaction.Rollback();
+                registros = 0;
             }
-            finally
-            {
-                if (conexion != null)
-                    if (conexion.State == ConnectionState.Open)
-                        conexion.Close();
+            finally  // se ejecuta si se produce o no una excepcion 
+            {                
+                conexion.Close();
+                comando.Dispose();      
             }
-            return tabla;
+
+            return registros;
         }
 
 

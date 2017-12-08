@@ -18,7 +18,7 @@ namespace TallerWeb
         protected void validarUsuario_Click(object sender, EventArgs e)
         {
 
-            var valida = IniciarSesionControllers.validacion(txtUsuario.Value , txtContrasena.Value );
+            var valida = IniciarSesionControllers.validacion(txtUsuario.Value.ToUpper() , txtContrasena.Value );
             if (valida.Tables[0].Rows.Count > 0)
             {
                 Response.Redirect("vista/AdminUsuarios.aspx");

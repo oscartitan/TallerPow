@@ -11,26 +11,36 @@
         <div class="box-body">
             <div class="row">
                 <div class="col-xs-3">
+ <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa  fa-user"></i></span>
-                        <input type="text" class="form-control" placeholder="Usuario">
+                        <input id="txtUsuario" runat="server" type="text" class="form-control" placeholder="Usuario" >
                     </div>
+</div>
+                </div>
                 </div>
                 <div class="col-xs-4">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                        <input type="text" class="form-control" placeholder="Contraseña">
+                        <input id="txtContrasena" runat="server" type="password" class="form-control" placeholder="Contraseña">
                     </div>
                 </div>
                 <div class="col-xs-5">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-male"></i></span>
-                        <input type="text" class="form-control" placeholder="Nombre">
+                        <input id="txtNombre" runat="server" type="text" class="form-control" placeholder="Nombre" >
                     </div>
                 </div>
             </div>
+           
         </div>
         <!-- /.box-body -->
+        <div class="box-footer">                   
+             <asp:LinkButton ID="Adicionar" runat="server" Text="Insertar" CssClass="btn btn-primary" 
+                 OnClick="AddUsuario_Click">
+                <span aria-hidden="true" class="fa fa-user-plus"> Insertar</span>
+             </asp:LinkButton>      
+        </div>
     </div>
 
 </asp:Content>
