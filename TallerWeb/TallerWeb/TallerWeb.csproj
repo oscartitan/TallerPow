@@ -6708,6 +6708,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CONTROLADOR\ConexionControllers.cs" />
+    <Compile Include="CONTROLADOR\IniciarSesionControllers.cs" />
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
