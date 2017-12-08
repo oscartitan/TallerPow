@@ -11,13 +11,10 @@
         <div class="box-body">
             <div class="row">
                 <div class="col-xs-3">
- <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa  fa-user"></i></span>
-                        <input id="txtUsuario" runat="server" type="text" class="form-control" placeholder="Usuario" >
+                        <input id="txtUsuario" runat="server" type="text" class="form-control" placeholder="Usuario">
                     </div>
-</div>
-                </div>
                 </div>
                 <div class="col-xs-4">
                     <div class="input-group">
@@ -28,7 +25,7 @@
                 <div class="col-xs-5">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-male"></i></span>
-                        <input id="txtNombre" runat="server" type="text" class="form-control" placeholder="Nombre" >
+                        <input id="txtNombre" runat="server" type="text" class="form-control" placeholder="Nombre">
                     </div>
                 </div>
             </div>
