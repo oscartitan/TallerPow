@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -6705,6 +6706,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CONTROLADOR\ConexionControllers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VISTA\AminUsuarios.aspx.cs">
       <DependentUpon>AminUsuarios.aspx</DependentUpon>
@@ -6715,6 +6717,7 @@
     </Compile>
     <Compile Include="VISTA\MasterPrincipal.Master.cs">
       <DependentUpon>MasterPrincipal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="VISTA\MasterPrincipal.Master.designer.cs">
       <DependentUpon>MasterPrincipal.Master</DependentUpon>
@@ -7345,7 +7348,6 @@
     <Content Include="yarn.lock" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CONTROLADOR\" />
     <Folder Include="MODELO\" />
   </ItemGroup>
   <PropertyGroup>
