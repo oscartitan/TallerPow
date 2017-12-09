@@ -54,7 +54,8 @@
        
                             <!-- /.col -->
                             <div class="col-xs-4">                               
-                                <asp:Button ID="validaUsuario"  class="btn btn-primary btn-block btn-flat" runat="server" Text="Aceptar" />
+                                <asp:Button ID="validaUsuario"  class="btn btn-primary btn-block btn-flat" 
+                                    runat="server" Text="Aceptar" OnClick="validarUsuario_Click" />
                             </div>
                             <!-- /.col -->
                         </div>
