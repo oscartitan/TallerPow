@@ -21,7 +21,7 @@ namespace TallerPowVive
             var valida = IniciarSesionControllers.validacion(txtUsuario.Value.ToUpper(), txtContrasena.Value);
             if (valida.Tables[0].Rows.Count > 0)
             {
-                Response.Redirect("vista/AdminUsuarios.aspx");
+                Response.Redirect("vista/AminUsuarios.aspx");
             }
             else
             {
