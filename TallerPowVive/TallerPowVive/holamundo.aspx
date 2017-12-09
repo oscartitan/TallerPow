@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="TallerPowVive.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="holamundo.aspx.cs" Inherits="TallerPowVive.holamundo" %>
 
 <!DOCTYPE html>
 
