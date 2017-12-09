@@ -18,6 +18,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+    <link rel="stylesheet" href="../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">    
+    <link href="../bower_components/datatables.net-bs/css/buttons.dataTables.min.css" rel="stylesheet" />   
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -420,6 +423,16 @@ desired effect
         <script src="../bower_components/jquery/dist/jquery.min.js"></script>
         <!-- Bootstrap 3.3.7 -->
         <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+               <!-- DataTables -->
+        <script src="../bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="../bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>  
+        <script src="../bower_components/datatables.net-bs/js/buttons.html5.min.js"></script>
+        <script src="../bower_components/datatables.net-bs/js/buttons.print.min.js"></script>
+        <script src="../bower_components/datatables.net-bs/js/dataTables.buttons.flash.min.js"></script>
+        <script src="../bower_components/datatables.net-bs/js/dataTables.buttons.min.js"></script>
+        <script src="../bower_components/datatables.net-bs/js/jszip.min.js"></script>
+        <script src="../bower_components/datatables.net-bs/js/pdfmake.min.js"></script>
+        <script src="../bower_components/datatables.net-bs/js/vfs_fonts.js"></script>
         <!-- AdminLTE App -->
         <script src="../dist/js/adminlte.min.js"></script>
 
@@ -427,6 +440,83 @@ desired effect
      Both of these plugins are recommended to enhance the
      user experience. -->
     </form>
+
+    
+<script>
+    $(document).ready(function () {
+        GridGeneral();
+    });
+
+    var GridGeneral = function () {
+        $(".gvuser").prepend($("<thead></thead>").append($(".gvuser").find("tr:first"))).dataTable({
+            "language": lenguaje_espanol,
+            "dom": "Bfrtip",
+            "buttons": botoneraExport,
+            responsive: true
+        });
+    }
+
+    // variables comunes
+
+    var lenguaje_espanol = {
+        "sProcessing": "Procesando...",
+        "sLengthMenu": "Mostrar _MENU_ registros",
+        "sZeroRecords": "No se encontraron resultados",
+        "sEmptyTable": "Ningún dato disponible en esta tabla",
+        "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+        "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+        "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+        "sInfoPostFix": "",
+        "sSearch": "Buscar:",
+        "sUrl": "",
+        "sInfoThousands": ",",
+        "sLoadingRecords": "Cargando...",
+        "oPaginate": {
+            "sFirst": "Primero",
+            "sLast": "Último",
+            "sNext": "Siguiente",
+            "sPrevious": "Anterior"
+        },
+        "oAria": {
+            "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+            "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+        }
+    }
+
+    var botoneraExport =
+         [
+                    {
+                        extend: 'copy',
+                        className: 'copyButton',
+                        text: '<i class="fa fa-clone"></i> Copiar'
+                    },
+        {
+            extend: 'excel',
+            text: '<i class="fa fa-file-excel-o"></i> Excel'
+        },
+        {
+            extend: 'csv',
+            text: '<i class="fa fa-file-excel-o"></i> CSV'
+        },
+        {
+            extend: 'print',
+            text: '<i class="fa fa-print"></i> Imprimir',
+            customize: function (win) {
+                $(win.document.body)
+                    .css('font-size', '10pt')
+                    .prepend(
+                        '<img src="Imagenes/Logos_EC.gif" style="position:absolute; top:0; left:0;" />'
+                    );
+
+                $(win.document.body).find('table')
+                    .addClass('compact')
+                    .css('font-size', 'inherit');
+            }
+        }
+         ]
+    //fin variables comunes
+
+</script>
 </body>
 </html>
 

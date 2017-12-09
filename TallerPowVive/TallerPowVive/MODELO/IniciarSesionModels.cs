@@ -24,5 +24,17 @@ namespace TallerPowVive.MODELO
                 " values('" + usuario.ToUpper().Trim() + "','" + contrasena.Trim() + "',INITCAP('" + nombre + "'))";
             return dataload.OraProcedimiento(Sql);
         }
+
+        internal DataSet listadoUsuarios()
+        {
+            Sql = "select * from TALLER.TUSUARIOS";
+            return dataload.OraConsulta(Sql);
+        }
+
+        internal int borrarUsuario(string usuario)
+        {
+            Sql = "delete TALLER.TUSUARIOS where USUARIO_USUARIO = '" + usuario.ToUpper().Trim() + "'";
+            return dataload.OraProcedimiento(Sql);
+        }
     }
 }

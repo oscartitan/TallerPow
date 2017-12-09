@@ -42,7 +42,51 @@
                     </asp:LinkButton>
                 </div>
 
+               
+                <div class="col-xs-4">
+                    <asp:LinkButton ID="Listar" runat="server" Text="Listar" CssClass="btn btn-default"
+                        OnClick="ListarUsuario_Click">
+                <span aria-hidden="true" class="fa fa-list"> Listar</span>
+                    </asp:LinkButton>
+                </div>
+
             </div>
+
+            <br />
+
+                     <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Listado de Usuarios</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+
+                <div class="table-responsive">
+
+                       <asp:GridView ID="GridViewUsuarios" runat="server" GridLines="None"
+                        CssClass="gvuser table table-striped table-bordered text-sm"
+                        OnRowCommand="GridViewUsuarios_RowCommand"  DataKeyNames="USUARIO_USUARIO" 
+                        CellSpacing="0" EmptyDataText="No se encontraron Registros con los parametros indicados.">
+                         <Columns>
+                            <asp:ButtonField CommandName="EliminaU" ControlStyle-CssClass="btn btn-danger"
+                                ButtonType="Link" Text="<i aria-hidden='true' class='fa fa-trash-o'></i> 
+                                            Eliminar"
+                                HeaderText="">
+                                <ControlStyle CssClass="btn btn-danger btn-sm"></ControlStyle>
+                            </asp:ButtonField>
+                        </Columns>
+                    </asp:GridView>
+
+                </div>
+
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        
+        </div>
+
          </div>
 
 </asp:Content>
