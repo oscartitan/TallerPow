@@ -33,4 +33,16 @@
             <!-- /.box-body -->
           </div>
 
+        <div class="box-footer">
+            <div class="row">
+                <div class="col-xs-4">
+                    <asp:LinkButton ID="Adicionar" runat="server" Text="Insertar" CssClass="btn btn-primary"
+                        OnClick="AddUsuario_Click">
+                <span aria-hidden="true" class="fa fa-user-plus"> Insertar</span>
+                    </asp:LinkButton>
+                </div>
+
+            </div>
+         </div>
+
 </asp:Content>

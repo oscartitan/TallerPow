@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using TallerPowVive.MODELO;
 
@@ -16,12 +18,36 @@ namespace TallerPowVive.CONTROLADOR
 
             try
             {
-                return usu.validacionUsuario(usuario, contrasena);
+                return usu.validacionUsuario(usuario, Encripta_Password(contrasena));
             }
             catch (Exception ex)
             {
                 throw; // para lanzar la exception o complementar la capturada
             }
+        }
+
+        // inserto en la base de datos un usuario
+        public static int adicionarUsuario(string usuario, string contrasena, string nombre)
+        {
+            IniciarSesionModels usu = new IniciarSesionModels();
+
+            try
+            {
+                return usu.insertarUsuario(usuario, Encripta_Password(contrasena), nombre);
+            }
+            catch (Exception ex)
+            {
+                throw; // para lanzar la exception o complementar la capturada
+            }
+        }
+
+        public static string Encripta_Password(string originalPassword)
+        {
+            SHA1CryptoServiceProvider cryptoServiceProvider = new SHA1CryptoServiceProvider();
+            byte[] bytes = Encoding.UTF8.GetBytes(originalPassword);
+            byte[] hash = cryptoServiceProvider.ComputeHash(bytes);
+            cryptoServiceProvider.Clear();
+            return Convert.ToBase64String(hash);
         }
 
     }
