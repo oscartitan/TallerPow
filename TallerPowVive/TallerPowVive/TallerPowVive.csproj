@@ -6705,6 +6705,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VISTA\MasterPrincipal.Master.cs">
+      <DependentUpon>MasterPrincipal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="VISTA\MasterPrincipal.Master.designer.cs">
+      <DependentUpon>MasterPrincipal.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include=".npmignore" />
@@ -7321,6 +7327,7 @@
     <Content Include="package.json" />
     <Content Include="plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="plugins\input-mask\phone-codes\phone-codes.json" />
+    <Content Include="VISTA\MasterPrincipal.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -7328,6 +7335,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <Content Include="yarn.lock" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CONTROLADOR\" />
+    <Folder Include="MODELO\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
